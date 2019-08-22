@@ -42,4 +42,14 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 EOF
 
+echo "Fixing Audio"
+mkdir ~/tmp
+git clone https://github.com/munizio/UCM ~/tmp/
+sudo cp -rv ~/tmp/UCM/chtmax98090 /usr/share/alsa/ucm
+alsactl kill quit
+alsactl init
+pulseaudio --kill
+pulseaudio --start
+sudo rm -rf ~/tmp/UCM
+
 echo "Your setup is ready. You can reboot now!"
