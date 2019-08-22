@@ -40,7 +40,7 @@ alias ll='ls -alF'
 EOF
 
 echo "Enabling NetworkManager"
-systemctl enable NetworkManager
+sudo systemctl enable NetworkManager
 
 echo "Fixing Audio"
 mkdir ~/tmp
