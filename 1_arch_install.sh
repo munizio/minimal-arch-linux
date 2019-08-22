@@ -8,17 +8,12 @@ main_hdd="mmcblk0"
 efi_partition=$main_hdd"p1"
 root_partition=$main_hdd"p2"
 
-
 echo "Updating system clock"
 timedatectl set-ntp true
 
 echo "Creating partition tables"
 printf "n\n1\n4096\n+512M\nef00\nw\ny\n" | gdisk /dev/$main_hdd
 printf "n\n2\n\n\n8e00\nw\ny\n" | gdisk /dev/$main_hdd
-
-echo "Zeroing partitions"
-cat /dev/zero > /dev/$efi_partition
-cat /dev/zero > /dev/$root_partition
 
 echo "Building EFI filesystem"
 yes | mkfs.fat -F32 /dev/$efi_partition
