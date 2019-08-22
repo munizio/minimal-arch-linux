@@ -4,10 +4,10 @@ echo "Installing common packages"
 yes | sudo pacman -S xorg-server-xwayland
 
 echo "Installing common applications"
-echo -en "1\nyes" | sudo pacman -S chromium git openssh htop curl wget
+echo -en "1\nyes" | sudo pacman -S chromium git openssh htop curl wget vim
 
 echo "Installing fonts"
-yes | sudo pacman -S ttf-droid ttf-opensans ttf-dejavu ttf-liberation ttf-hack ttf-fira-code noto-fonts gsfonts powerline-fonts adobe-source-code-pro-fonts
+yes | sudo pacman -S ttf-droid ttf-opensans ttf-dejavu ttf-liberation ttf-hack ttf-fira-code noto-fonts gsfonts powerline-fonts
 
 echo "Installing Material Design icons"
 sudo mkdir -p /usr/share/fonts/TTF/
@@ -28,12 +28,9 @@ mkdir -p ~/.config/rofi
 wget -P ~/.config/rofi https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/configs/rofi/base16-material-darker.rasi
 wget -P ~/.config/rofi https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/configs/rofi/config
 
-echo "misc config changes"
-cat >> ~/.bash_profile << EOF
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  XKB_DEFAULT_LAYOUT=us exec sway
-fi
-EOF
+echo "Set .bash_profile"
+rm ~/.bash_profile
+wget -P ~/.bash_profile https://raw.githubusercontent.com/munizio/minimal-arch-linux/master/.bash_profile
 
 cat >> ~/.bashrc << EOF
 alias vi='vim'
@@ -44,7 +41,7 @@ EOF
 
 echo "Fixing Audio"
 mkdir ~/tmp
-git clone https://github.com/munizio/UCM ~/tmp/
+git clone https://github.com/munizio/UCM ~/tmp/UCM
 sudo cp -rv ~/tmp/UCM/chtmax98090 /usr/share/alsa/ucm
 alsactl kill quit
 alsactl init
