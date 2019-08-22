@@ -13,11 +13,20 @@ sudo wget -P /usr/share/fonts/TTF/ https://raw.githubusercontent.com/Templarian/
 echo "Installing sway and additional packages"
 yes | sudo pacman -S sway swaylock swayidle waybar wl-clipboard pulseaudio pavucontrol alsa-utils rofi light termite
 
-echo "fetching base config files from repo"
+echo "Fetching Custom Config Files from Repo"
 cd ~
 git init
 git remote add origin https://github.com/munizio/minimal-arch-linux
 git pull origin master -f
+
+echo "Blacklisting bluetooth"
+sudo touch /etc/modprobe.d/nobt.conf
+sudo tee /etc/modprobe.d/nobt.conf << END
+blacklist btusb
+blacklist bluetooth
+END
+sudo mkinitcpio -p linux-lts
+sudo mkinitcpio -p linux
 
 echo "Fixing Audio"
 mkdir ~/tmp
