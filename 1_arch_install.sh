@@ -30,7 +30,7 @@ echo "Mounting root"
 mount /dev/$root_partition /mnt
 
 echo "Installing Arch Linux"
-yes '' | pacstrap /mnt base base-devel dialog wpa_supplicant
+yes '' | pacstrap /mnt base base-devel dialog wpa_supplicant grub efibootmgr
 
 echo "Generating fstab"
 genfstab -U -p /mnt >> /mnt/etc/fstab
@@ -62,13 +62,11 @@ echo -en "$user_password\n$user_password" | passwd $user_name
 echo "Adding user as a sudoer"
 echo '%wheel ALL=(ALL) ALL' | EDITOR='tee -a' visudo
 
-echo "Installing GRUB"
-pacman -Sy grub efibootmgr
+echo "Configuring GRUB"
 mkdir /boot/efi
 mount /dev/$efi_partition /boot/efi
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
-
 mkdir /boot/efi/EFI/BOOT
 cp /boot/efi/EFI/GRUB/grubx64.efi /boot/efi/EFI/BOOT/BOOTX64.EFI
 
