@@ -9,6 +9,14 @@ echo -en "1\nyes" | sudo pacman -S chromium git openssh htop curl wget vim netwo
 echo "Installing fonts"
 yes | sudo pacman -S ttf-droid ttf-opensans ttf-dejavu ttf-liberation ttf-hack ttf-fira-code noto-fonts gsfonts powerline-fonts
 
+echo "Setting up icon theme"
+git clone https://github.com/vinceliuice/Qogir-icon-theme.git
+cd Qogir-icon-theme
+sudo mkdir -p /usr/share/icons
+sudo ./install.sh -d /usr/share/icons
+cd ..
+rm -rf Qogir-icon-theme
+
 echo "Installing Material Design icons"
 sudo mkdir -p /usr/share/fonts/TTF/
 sudo wget -P /usr/share/fonts/TTF/ https://raw.githubusercontent.com/Templarian/MaterialDesign-Webfont/master/fonts/materialdesignicons-webfont.ttf
