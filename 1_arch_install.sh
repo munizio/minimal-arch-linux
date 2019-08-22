@@ -25,7 +25,7 @@ echo "Mounting root"
 mount /dev/$root_partition /mnt
 
 echo "Installing Arch Linux"
-yes '' | pacstrap /mnt base base-devel dialog wpa_supplicant grub efibootmgr
+yes '' | pacstrap /mnt base base-devel grub efibootmgr
 
 echo "Generating fstab"
 genfstab -U -p /mnt >> /mnt/etc/fstab
@@ -56,6 +56,9 @@ echo -en "$user_password\n$user_password" | passwd $user_name
 
 echo "Adding user as a sudoer"
 echo '%wheel ALL=(ALL) ALL' | EDITOR='tee -a' visudo
+
+echo "Enabling Network Manager"
+systemctl enable NetworkManager
 
 echo "Configuring GRUB"
 mkdir /boot/efi

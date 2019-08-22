@@ -19,9 +19,6 @@ git init
 git remote add origin https://github.com/munizio/minimal-arch-linux
 git pull origin master -f
 
-echo "Enabling NetworkManager"
-sudo systemctl enable NetworkManager
-
 echo "Fixing Audio"
 mkdir ~/tmp
 git clone https://github.com/munizio/UCM ~/tmp/UCM
