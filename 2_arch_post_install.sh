@@ -30,7 +30,7 @@ wget -P ~/.config/rofi https://raw.githubusercontent.com/exah-io/minimal-arch-li
 
 echo "Set .bash_profile"
 rm ~/.bash_profile
-wget -P ~/.bash_profile https://raw.githubusercontent.com/munizio/minimal-arch-linux/master/.bash_profile
+wget -P ~/ https://raw.githubusercontent.com/munizio/minimal-arch-linux/master/.bash_profile
 
 cat >> ~/.bashrc << EOF
 alias vi='vim'
