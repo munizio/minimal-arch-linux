@@ -4,7 +4,7 @@ echo "Installing common packages"
 yes | sudo pacman -S xorg-server-xwayland
 
 echo "Installing common applications"
-echo -en "1\nyes" | sudo pacman -S chromium git openssh htop curl wget vim
+echo -en "1\nyes" | sudo pacman -S chromium git openssh htop curl wget vim networkmanager
 
 echo "Installing fonts"
 yes | sudo pacman -S ttf-droid ttf-opensans ttf-dejavu ttf-liberation ttf-hack ttf-fira-code noto-fonts gsfonts powerline-fonts
@@ -38,6 +38,9 @@ alias vi='vim'
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 EOF
+
+echo "Enabling NetworkManager"
+systemctl enable NetworkManager
 
 echo "Fixing Audio"
 mkdir ~/tmp
