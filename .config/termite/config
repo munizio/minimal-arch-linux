@@ -1,0 +1,54 @@
+[options]
+#allow_bold = true
+#audible_bell = false
+#bold_is_bright = true
+#cell_height_scale = 1.0
+#cell_width_scale = 1.0
+#clickable_url = true
+dynamic_title = true
+font = Source Code Pro 10
+icon_name = terminal
+scrollback_lines = 10000
+hyperlinks = true
+browser = chromium-browser
+
+[colors]
+
+# special
+foreground      = #eeffff
+foreground_bold = #eeffff
+cursor          = #eeffff
+background      = #263238
+
+# black
+color0  = #546e7a
+color8  = #546e7a
+
+# red
+color1  = #ff5370
+color9  = #ff5370
+
+# green
+color2  = #c3e88d
+color10 = #c3e88d
+
+# yellow
+color3  = #ffcb6b
+color11 = #ffcb6b
+
+# blue
+color4  = #82aaff
+color12 = #82aaff
+
+# magenta
+color5  = #c792ea
+color13 = #c792ea
+
+# cyan
+color6  = #89ddff
+color14 = #89ddff
+
+# white
+color7  = #ffffff
+color15 = #ffffff
+

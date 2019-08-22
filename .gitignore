@@ -1,0 +1,27 @@
+# Blacklist all files/folders in same directory as .gitignore file
+/*
+
+
+# Whitelist
+!.gitignore
+!README.md
+!screenshot.png
+!screenshot_2.png
+
+!.config/
+.config/*
+!.config/rofi/
+!.config/sway/
+!.config/termite/
+!.config/waybar/
+
+!.ssh/
+.ssh/
+!.ssh/config
+
+!.bash_profile
+!.bashrc
+
+!.vimrc
+
+!wallpaper.jpg
