@@ -6,14 +6,15 @@
 }
 
 window {
-    background: rgba(33, 33, 33, 0.9);
-    color: white;
+    /* background: rgba(33, 33, 33, 0.9); */
+    background: #263238;
+    color: #eeffff;
 }
 
 #workspaces button {
     padding: 5px 10px;
     background: transparent;
-    color: white;
+    color: #eeffff;
     border-bottom: 3px solid transparent;
 }
 
@@ -22,8 +23,10 @@ window {
 }
 
 #workspaces button.focused {
-    background: rgba(200, 200, 200, 0.1);
-    border-bottom: 3px solid white;
+    /* background: rgba(200, 200, 200, 0.1); */
+    background: #eeffff;
+    color: #263238;
+    border-bottom: 3px solid #263238;
 }
 
 #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-brightness, #custom-spotify {

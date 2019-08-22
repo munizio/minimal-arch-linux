@@ -37,12 +37,12 @@
         "interval": 1,
         "format": "{:%a %b %d %H:%M:%S}"
     },
-    "cpu": {
-        "format": "{}% "
-    },
-    "memory": {
-        "format": "{}% "
-    },
+    //"cpu": {
+    //    "format": "{}% "
+    //},
+    //"memory": {
+    //    "format": "{}% "
+    //},
     "battery": {
         "interval": 2,
         "states": {
