@@ -62,10 +62,9 @@ bindsym $mod+Control+l exec swaylock -f -i ~/wallpaper.jpg
 
 input 1267:76:Elan_Touchpad {
 	natural_scroll enabled
-	tap enabled
+	tap disable
 	#Clickfinger works even if this is enabled
-	click_method button_areas
-	#click_method clickfinger
+	click_method clickfinger
 	accel_profile adaptive
 	dwt enabled
 	#dwt disabled
