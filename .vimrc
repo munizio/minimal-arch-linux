@@ -27,6 +27,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug '/usr/bin/fzf'
 
 call plug#end()
 
@@ -64,3 +65,5 @@ nnoremap <C-H> <C-W><C-H>
 
 set splitbelow
 set splitright
+
+map <leader>f :FZF<CR>

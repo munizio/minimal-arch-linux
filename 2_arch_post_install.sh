@@ -4,7 +4,7 @@ echo "Installing common packages"
 yes | sudo pacman -S xorg-server-xwayland
 
 echo "Installing common applications"
-echo -en "1\nyes" | sudo pacman -S chromium git openssh htop curl wget vim networkmanager
+echo -en "1\nyes" | sudo pacman -S chromium git openssh htop curl wget vim networkmanager fzf bmon
 
 echo "Installing Material Design icons"
 sudo mkdir -p /usr/share/fonts/TTF/
