@@ -100,7 +100,7 @@
             "headphones": "",
             "headset": "",
             "speaker": "",
-            "default": [""]
+            "default": [""]
         },
         "on-click": "pavucontrol"
     },
