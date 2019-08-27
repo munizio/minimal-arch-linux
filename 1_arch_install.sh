@@ -33,7 +33,7 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 echo "Configuring new system"
 arch-chroot /mnt /bin/bash << EOF
 echo "Setting system clock"
-ln -fs /usr/share/zoneinfo/Americas/Chicago /etc/localtime
+ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime
 hwclock --systohc --utc
 
 echo "Setting locales"
