@@ -219,4 +219,9 @@ bar {
     swaybar_command waybar
 }
 
+# Screenshots
+set $screenshot grim
+set $screenshotout $HOME/$(date "+%Y-%m-%d-%H%M%S_shot.png")
+bindsym $mod+F4 exec $screenshot $screenshotout
+
 include /etc/sway/config.d/*
