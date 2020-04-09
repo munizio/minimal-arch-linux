@@ -21,13 +21,12 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'kaicataldo/material.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'hashivim/vim-terraform'
-Plug 'pearofducks/ansible-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
 Plug '/usr/bin/fzf'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
+
+let g:polyglot_disabled = ['typescript']
 
 call plug#end()
 
